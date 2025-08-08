@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guia de uso y Aplicacion : Backend </title>
+    <link rel="stylesheet" href="../styles/estiloUno.css" />
+</head>
+
+<body>
+    <div class="fixed-header">Backend</div>
+
+    <div class="container">
+        <div class="sections section3 reverse">
+            <div class="text">
+                <h2>EJB - Enterprise JavaBeans</h2>
+                <p>
+                    EJB (Enterprise JavaBeans) es una tecnología de Java utilizada para desarrollar componentes de
+                    software del lado del servidor que encapsulan la lógica de negocio de una aplicación empresarial.
+                    Los EJB se ejecutan dentro de un contenedor especial que ofrece servicios como seguridad,
+                    transacciones, persistencia y manejo de concurrencia, permitiendo que el desarrollador se concentre
+                    en la lógica de la aplicación sin preocuparse por estos aspectos técnicos. Son ideales para
+                    aplicaciones grandes y distribuidas, ya que facilitan la creación de sistemas escalables, seguros y
+                    con un manejo eficiente de los recursos del servidor.
+                </p>
+
+                <p class="p2">
+                    <strong>EJB (Enterprise JavaBeans)</strong> es una tecnología de Java EE que permite desarrollar
+                    componentes distribuidos, escalables, seguros y transaccionales en aplicaciones
+                    empresariales.<br><br>
+
+                    Su principal ventaja es facilitar el desarrollo de la lógica del negocio separándola de la lógica de
+                    presentación o de acceso a datos.<br><br>
+
+                    Para crear y trabajar con EJB en <strong>NetBeans 21</strong>, puedes seguir estos pasos:<br><br>
+
+                    1. Abre NetBeans y selecciona <em>"Nuevo Proyecto"</em>.<br>
+                    2. Elige la categoría <strong>Java con Maven</strong> y selecciona <strong>Enterprise
+                        Application</strong>, luego haz clic en <em>Next</em>.<br>
+                    3. Define los valores de <strong>Group ID</strong> y <strong>Artifact ID</strong>, y elige un nombre
+                    adecuado para tu proyecto.<br>
+                    4. Asegúrate de que esté habilitado el módulo <strong>EJB Module</strong> en la configuración del
+                    proyecto.<br>
+                    5. Una vez creado el proyecto, haz clic derecho en el módulo EJB y selecciona <em>"Nuevo > Sesión
+                        Bean"</em> para crear un EJB de sesión.<br>
+                    6. Define el tipo de bean: <strong>Stateless</strong> (sin estado), <strong>Stateful</strong> (con
+                    estado) o <strong>Singleton</strong> (instancia única).<br>
+                    7. Escribe la lógica del negocio dentro de la clase EJB. Puedes usar anotaciones como
+                    <code>@Stateless</code> o <code>@Stateful</code>.<br>
+                    8. Agrega interfaces remotas o locales si deseas exponer los métodos del EJB a otros módulos o
+                    aplicaciones.<br>
+                    9. Usa un cliente (como un servlet o aplicación web) para inyectar el EJB y llamar a sus
+                    métodos.<br>
+                    10. Compila y despliega tu aplicación en un servidor compatible con Java EE como
+                    <strong>GlassFish</strong> o <strong>WildFly</strong>.
+                </p>
+            </div>
+            <div class="imagenes-maven2">
+                <img src="../images/ejb1.png" alt="Imagen Maven 1" />
+                <img src="../images/ejb2.png" alt="Imagen Maven 1" />
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mi Página Responsiva. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guia de uso y Aplicacion : Backend </title>
+    <link rel="stylesheet" href="../styles/estiloUno.css" />
+</head>
+
+<body>
+    <div class="fixed-header">Backend</div>
+        <div class="section section2 reverse">
+            <div class="text">
+                <h2>POM - Project Object Model (pom.xml)</h2>
+                <p class="p3">
+                    El archivo <code>pom.xml</code> es el núcleo y la columna vertebral de cualquier proyecto Maven en
+                    Java. Este archivo define toda la configuración necesaria para gestionar, compilar, construir y
+                    desplegar la aplicación de forma eficiente y automatizada. En él se declaran las dependencias,
+                    plugins, perfiles, propiedades y otras configuraciones que controlan el ciclo de vida del
+                    proyecto.<br><br>
+                    Gracias al <code>pom.xml</code>, Maven puede manejar automáticamente la descarga de bibliotecas
+                    externas, la resolución de conflictos entre versiones, la ejecución de pruebas y la creación de
+                    paquetes, entre muchas otras tareas. Esto permite a los desarrolladores concentrarse en escribir
+                    código sin preocuparse por la gestión manual de las dependencias o la configuración del entorno.
+                </p>
+                <p class="p3">
+                    Para crear y revisar un archivo <code>pom.xml</code> correctamente en <strong>NetBeans 21</strong>,
+                    sigue estos pasos detallados y recomendaciones:
+                </p>
+                <p class="p3">
+                    1. Abre NetBeans 21 y crea un nuevo proyecto seleccionando <em>Maven</em> como tipo de proyecto.
+                    Esto generará automáticamente la estructura estándar de Maven, incluyendo el archivo
+                    <code>pom.xml</code> en la raíz.<br><br>
+                    2. Confirma que el archivo <code>pom.xml</code> esté presente en la raíz del proyecto y abrelo desde
+                    el panel de proyectos o con doble clic.<br><br>
+                    3. Dentro del <code>pom.xml</code>, verifica que contenga las etiquetas fundamentales:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;- <code>&lt;groupId&gt;</code>: identifica el grupo o empresa
+                    desarrolladora.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;- <code>&lt;artifactId&gt;</code>: define el nombre del proyecto o
+                    módulo.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;- <code>&lt;version&gt;</code>: especifica la versión actual del
+                    proyecto.<br><br>
+                    4. Agrega las dependencias necesarias dentro del bloque <code>&lt;dependencies&gt;</code>. Cada
+                    dependencia indica una librería o módulo externo que tu proyecto necesita para funcionar. NetBeans y
+                    Maven descargarán automáticamente estas librerías desde repositorios remotos.<br><br>
+                    5. Puedes definir plugins en la sección <code>&lt;build&gt;</code> para añadir funcionalidades como
+                    la compilación de código, generación de documentación, o empaquetado de la aplicación.<br><br>
+                    6. NetBeans detecta automáticamente errores o advertencias en el <code>pom.xml</code> y los muestra
+                    en la ventana de <em>Output</em> o con marcas visuales en el editor, facilitando la corrección
+                    rápida.<br><br>
+                    7. Utiliza la opción <em>Run > Clean and Build Project</em> para limpiar la caché, recompilar todo
+                    el proyecto y asegurarte que las dependencias y configuraciones se aplican correctamente.<br><br>
+                    8. Ejecuta el proyecto para verificar que la compilación y el empaquetado funcionan sin problemas, y
+                    que todas las dependencias han sido resueltas.<br><br>
+                    9. Además, para proyectos más complejos, puedes configurar perfiles de Maven dentro del
+                    <code>pom.xml</code>, que te permiten activar diferentes configuraciones o dependencias según el
+                    entorno (desarrollo, pruebas, producción).<br><br>
+                    10. También es recomendable mantener el <code>pom.xml</code> limpio y bien documentado, usando
+                    comentarios XML y organizando las dependencias por categorías o módulos para facilitar la
+                    comprensión y mantenimiento a largo plazo.<br><br>
+                    11. Aprovecha las herramientas de NetBeans para actualizar automáticamente las dependencias y
+                    plugins a sus últimas versiones estables, usando el panel de dependencias Maven.<br><br>
+                    12. Finalmente, recuerda que un <code>pom.xml</code> bien estructurado y gestionado es clave para la
+                    escalabilidad y mantenimiento de cualquier aplicación Java que utilice Maven como gestor de
+                    proyectos.
+                </p>
+                <p class="p2">
+                    Estos pasos y buenas prácticas te asegurarán un manejo eficiente del ciclo de vida del proyecto y
+                    una integración continua más fluida en tu entorno de desarrollo.
+                </p>
+            </div>
+            <img src="../images/pom,xml.png" alt="Imagen 2" />
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Mi Página Responsiva. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

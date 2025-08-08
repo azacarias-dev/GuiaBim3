@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guia de uso y Aplicacion : Backend </title>
+    <link rel="stylesheet" href="../styles/estiloUno.css" />
+</head>
+
+<body>
+    <div class="fixed-header">Backend</div>
+
+    <div class="container">
+
+        <div class="sections section2 reverse">
+            <div class="text">
+                <h2>Servlet CRUD - Explicación de métodos</h2>
+                <p>
+                    Un servlet es un componente de Java que se ejecuta en un servidor web o de aplicaciones y que
+                    permite procesar solicitudes y generar respuestas de manera dinámica. Funciona como un intermediario
+                    entre el cliente (por ejemplo, un navegador) y la lógica de la aplicación, recibiendo peticiones
+                    HTTP, ejecutando el código necesario y devolviendo una respuesta, que normalmente es una página HTML
+                    o datos en otros formatos como JSON o XML. Los servlets son la base de muchas aplicaciones web en
+                    Java, ya que facilitan la creación de contenido dinámico y la interacción con bases de datos y otros
+                    recursos del servidor.
+                </p>
+
+                <p class="p4">
+                    El servlet <code>CategoriaServlet</code> maneja las operaciones CRUD (Crear, Leer, Actualizar,
+                    Eliminar) para la entidad Categorías. La lógica se divide principalmente en los métodos
+                    <code>doGet()</code> y <code>doPost()</code>, según el tipo de operación y la acción recibida.
+                </p>
+
+                <h3>doGet(HttpServletRequest request, HttpServletResponse response)</h3>
+                <p class="p4">
+                    Este método procesa las solicitudes HTTP GET y responde principalmente a operaciones de lectura y
+                    navegación:
+                </p>
+                <ul class="spacing-1line">
+                    <li><strong>Listar:</strong> Recupera todas las categorías usando el DAO y las pasa como atributo a
+                        la página <code>Categorias.jsp</code> para mostrar la lista.</li>
+                    <li><strong>Editar:</strong> Obtiene el ID de la categoría a editar, busca la categoría con el DAO,
+                        la pasa a <code>editarCategoria.jsp</code> para mostrar el formulario con datos actuales.</li>
+                    <li><strong>Eliminar:</strong> Recibe el ID, elimina la categoría a través del DAO y redirige a la
+                        lista para mostrar los cambios.</li>
+                    <li><strong>Default:</strong> Si no se especifica acción, redirige a la lista por defecto.</li>
+                </ul>
+
+                <h3>doPost(HttpServletRequest request, HttpServletResponse response)</h3>
+                <p class="p4">
+                    Este método procesa las solicitudes HTTP POST, usadas para operaciones que modifican datos (crear o
+                    actualizar):
+                </p>
+                <ul class="spacing-1line">
+                    <li><strong>Insertar:</strong> Crea un nuevo objeto Categoría con los datos recibidos del
+                        formulario, lo guarda mediante el DAO y redirige a la lista.</li>
+                    <li><strong>Actualizar:</strong> Recupera la categoría existente por ID, actualiza sus datos con los
+                        valores recibidos y guarda los cambios con el DAO, luego redirige a la lista.</li>
+                    <li><strong>Default:</strong> Redirige a la lista si no se especifica la acción o no coincide con
+                        las anteriores.</li>
+                </ul>
+
+                <p class="p4">
+                    Este enfoque centraliza la gestión de acciones mediante un parámetro <code>accion</code> que
+                    determina qué operación se realiza, manteniendo el servlet organizado y evitando múltiples servlets
+                    para cada operación.
+                </p>
+            </div>
+            <img src="../images/Servlet.png" alt="Imagen 1" />
+        </div>
+
+
+    </div>
+
+    <footer class="footer2">
+        <p>&copy; 2025 Mi Página Responsiva. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

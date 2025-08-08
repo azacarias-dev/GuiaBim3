@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía CSS</title>
+    <link rel="stylesheet" href="../styles/css.css">
+</head>
+
+<body>
+    <header class="fixed-header">
+        Guía para implementar CSS a tu proyecto
+    </header>
+
+    <main class="container">
+
+        <section class="section section1">
+            <div class="text">
+                <h2>¿Qué es CSS?</h2>
+                <p class="p2">
+                    CSS (Cascading Style Sheets) es un lenguaje que describe cómo se presentan los elementos de un documento HTML.
+                    Nos permite personalizar el aspecto visual de una página web, controlando colores, fuentes, márgenes,
+                    posiciones y diseños de forma flexible.
+                </p>
+                <p class="p2">
+                    En esta guía aprenderás a integrar tu propio archivo CSS en un proyecto Java utilizando Maven y JSP.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section2">
+            <div class="text">
+                <h2>1. Crear un proyecto Maven con soporte web</h2>
+                <p class="p3">
+                    Asegúrate de que tenga la siguiente estructura:
+                </p>
+
+                <pre>
+
+src/
+├── main/
+│   ├── java/
+│   ├── resources/
+│   └── webapp/
+│       ├── WEB-INF/
+│       ├── styles/
+│       │   └── style.css
+│       └── index.jsp
+                </pre>
+            </div>
+        </section>
+
+        <section class="section section3">
+            <div class="text">
+                <h2>2. Crear un archivo CSS</h2>
+                <p class="p2">
+                    Dentro de la carpeta <code>styles o el nombre que quieras pero que sepas que ese es el estilo de preferencia style</code>, crea un archivo llamado <code>style.css o (el nombre que quieras)</code> con tus reglas de estilo  Ejemplo.
+                </p>
+                
+                
+                <pre><code>body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="section section1">
+            <div class="text">
+                <h2>3. Enlazar el CSS desde tu JSP</h2>
+                <p class="p2">
+                    En tu archivo JSP, dentro de la etiqueta <code>&lt;head&gt;</code>, agrega:
+                </p>
+                <pre><code>&lt;link rel="stylesheet" href="${pageContext.request.contextPath}/styles/style.css"&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section section2">
+            <div class="text">
+                <h2>4. Crear un archivo JSP con CSS</h2>
+                <p class="p4">Ejemplo básico de <code>index.jsp</code> enlazando tu CSS:</p>
+                <pre><code>&lt;%@ page contentType="text/html;charset=UTF-8" %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Mi Proyecto con CSS&lt;/title&gt;
+    &lt;link rel="stylesheet" href="${pageContext.request.contextPath}/styles/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;¡Hola desde JSP con CSS puro!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section section3">
+            <div class="text">
+                <h2>5. Capturas de ejemplo</h2>
+                <p class="p2">Aquí el proceso:</p>
+
+                <div class="mb-4">
+                    <p><strong>Captura 1 - Estructura del proyecto:</strong> Proyecto Maven con carpeta <code>styles</code> y <code>style.css</code>.</p>
+                    <img src="../images/estructuraCss.png " class="img-fluid border" alt="Estructura del proyecto Maven con CSS">
+                </div>
+
+                <div class="mb-4">
+                    <p><strong>Captura 2 - Código CSS:</strong> Archivo <code>style.css</code> con reglas personalizadas.</p>
+                    <img src="../images/codigoCss.png" class="img-fluid border" alt="Archivo CSS">
+                </div>
+
+                <div class="mb-4">
+                    <p><strong>Captura 3 - Código JSP:</strong> <code>index.jsp</code> enlazando <code>style.css</code>.</p>
+                    <img src="../images/linkCss.png" class="img-fluid border" alt="Código JSP con CSS">
+                </div>
+
+                <div class="mb-4">
+                    <p><strong>Captura 4 - Vista en el navegador:</strong> Página ya estilizada con CSS.</p>
+                    <img src="../images/CssAplicado.png" class="img-fluid border" alt="Vista de la página JSP con CSS">
+                </div>
+            </div>
+        </section>
+
+      
+
+    </main>
+
+    <footer class="text-center py-3">
+        Proyecto colaborativo - Bimestre 3
+    </footer>
+</body>
+
+</html>

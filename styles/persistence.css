@@ -1,0 +1,55 @@
+#box-1 {
+    margin: 5% 15%;
+    background-color: #2d4a53;
+    padding: 2%;
+    border-radius: 35px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-style: groove;
+}
+
+.parrafos {
+    text-align: justify;
+    text-justify: inter-word;
+    background-color: #2d4a53;
+    border-radius: 16px;
+    margin: 15px;
+}
+
+.contenedor-imagenes {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+}
+
+body {
+    background: linear-gradient(180deg, #4c9ebf 0%, #3bcdc7 100%);
+}
+#img-container {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#tabla-propiedades {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.tabla-datos {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid gray;
+}
+
+#parrafo-propiedades {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

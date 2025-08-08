@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Persistence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styles/persistence.css" />
+    <link rel="shortcut icon" href="../images/jpaLogo.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div id="box-1">
+        <h1>PERSISTENCE.XML</h1>
+        <p class="parrafos">
+            <code>persistence.xml</code> es un archivo de configuración utilizado por Java Persistence API (JPA) para
+            definir la unidad de persistencia y sus propiedades. Este archivo se coloca en el directorio
+            <code>META-INF</code> dentro del classpath de nuestra aplicación.
+        </p>
+        <p><strong>Sirve para definir:</strong></p>
+        <ol>
+            <li>La unidad de persistencia (Persistence Unit) que conecta la aplicacion a una base de datos.</li>
+            <li>El proveedor JPA (por ejemplo: Hibernate o EclipseLink).</li>
+            <li>Las entidades que forman parte del proyecto.</li>
+            <li>Configuraciones y propiedades especificas para el manejo de la persistencia.</li>
+        </ol>
+        <p>Se ubica dentro de la carpeta <code>src/main/resources/META-INF/</code></p>
+        <p>
+            <strong>Estructura Básica.</strong>
+            <br>
+            Ejemplo con <code>RESOURCE-LOCAL</code> (transacciones manejadas manualmente desde el código).
+        </p>
+        <div id="img-container">
+            <img class="img-fluid" src="../images/persistence.png" alt="img-persistence">
+        </div>
+        <p>
+            <strong>Tipos de configuración de transacciones:</strong>
+            <br>
+        <ol>
+            <li><code>RESOURCE-LOCAL</code></li>
+            <p>Las transacciones <code>RESOURCE-LOCAL</code> son aquellas que se manejan manualmente desde el código,
+                utilizando la API de JPA para iniciar, confirmar o deshacer transacciones.
+            </p>
+            <li><code>JTA</code></li>
+            <p>
+                El servidor de aplicaciones (GlassFish, WildFly, Payara, etc.) administra las transacciones.
+                Se usa <code>jta-data-source</code> en lugar de parámetros JDBC.
+            </p>
+        </ol>
+        <strong>Estructura Básica</strong>
+        <br>
+        Ejemplo con <code>JTA</code> (transacciones manejadas por el servidor de aplicaciones).
+        </p>
+        <div id="img-container">
+            <img class="img-fluid" src="../images/persistenceJta.png" alt="img-persistence-jta">
+        </div>
+
+        <p id="parrafo-propiedades"><strong>Propiedades más comunes:</strong></p>
+
+        <div id="table-contenedor">
+            <table id="tabla-propiedades">
+                <th>Propiedad</th>
+                <th>Descripción</th>
+                <tr>
+                    <td class="tabla-datos"><code>javax.persistence.jdbc.url</code></td>
+                    <td class="tabla-datos"><small>URL de conexión a la base de datos</small></td>
+                </tr>
+                <tr>
+                    <td class="tabla-datos"><code>javax.persistence.jdbc.user</code></td>
+                    <td class="tabla-datos"><small>Usuario de la base de datos</small></td>
+                </tr>
+                <tr>
+                    <td class="tabla-datos"><code>javax.persistence.jdbc.password</code></td>
+                    <td class="tabla-datos"><small>Contraseña del usuario</small></td>
+                </tr>
+                <tr>
+                    <td class="tabla-datos"><code>javax.persistence.jdbc.driver</code></td>
+                    <td class="tabla-datos"><small>Controlador JDBC para la base de datos</small></td>
+                </tr>
+                <tr>
+                    <td class="tabla-datos"><code>hibernate.dialect</code></td>
+                    <td class="tabla-datos"><small>Dialecto de la base de datos (ej: MySQL, PostgreSQL)</small></td>
+                </tr>
+                <tr>
+                    <td class="tabla-datos"><code>hibernate.hbm2ddl.auto</code></td>
+                    <td class="tabla-datos"><small>Configuración de la estrategia de creación de esquemas (ej: update, validate)</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tabla-datos"><code>hibernate.show.sql</code></td>
+                    <td class="tabla-datos"><small>Mostrar las consultas SQL generadas</small></td>
+                </tr>
+                <tr>
+                    <td class="tabla-datos"><code>hibernate.format_sql</code></td>
+                    <td class="tabla-datos"><small>Formato de las consultas SQL generadas</small></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

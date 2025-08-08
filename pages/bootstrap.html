@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+</head>
+
+<body>
+    <header class="fixed-header">
+        Guía para implementar Bootstrap a tu proyecto
+    </header>
+
+    <main class="container-fluid px-1">
+
+        <section class="section section1">
+            <div class="text">
+                <h2>¿Qué es Bootstrap?</h2>
+                <p class="p2">
+                    Bootstrap es un framework de CSS de código abierto que facilita el diseño de sitios web y aplicaciones
+                    web responsive. Nos proporciona una gran cantidad de clases listas para usar que permiten maquetar interfaces limpias y modernas de forma rápida y sencilla.
+                    Ofrece una colección de componentes y estilos predefinidos, como sistemas de cuadrícula, botones, formularios y barras de navegación, que facilitan la
+                    construcción de interfaces de usuario adaptables a diferentes dispositivos. 
+                </p>
+                <p class="p2">
+                    En esta guía aprenderás a integrar Bootstrap en un proyecto Java utilizando Maven y JSP.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section2">
+            <div class="text">
+                <h2>1. Crear un proyecto Maven con soporte web</h2>
+                <p class="p3">
+                    Puedes crear el proyecto desde tu IDE favorito (Eclipse, IntelliJ, NetBeans) o desde la terminal usando Maven Archetype.
+                </p>
+                <p class="p3">
+                    Asegúrate de que tenga la siguiente estructura:
+                </p>
+                <pre>
+src/
+├── main/
+│   ├── java/
+│   ├── resources/
+│   └── webapp/
+│       ├── WEB-INF/
+│       └── index.jsp
+                </pre>
+            </div>
+        </section>
+
+        <section class="section section3">
+            <div class="text">
+                <h2>2. Integrar Bootstrap vía CDN</h2>
+                <p class="p2">
+                    Esta es la forma más rápida de usar Bootstrap. Simplemente agrega el siguiente enlace en la etiqueta <code>&lt;head&gt;</code> de tu archivo <code>.jsp</code>:
+                </p>
+                <pre><code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;</code></pre>
+                <p class="p2">También puedes agregar el JS opcional de Bootstrap al final del <code>&lt;body&gt;</code> si deseas usar componentes interactivos:</p>
+                <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section section1">
+            <div class="text">
+                <h2>3. Integrar Bootstrap usando WebJars</h2>
+                <p class="p2">
+                    También puedes usar WebJars para gestionar las dependencias desde Maven.
+                </p>
+                <p class="p2">Agrega esta dependencia en tu <code>pom.xml</code>:</p>
+                <pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.webjars&lt;/groupId&gt;
+    &lt;artifactId&gt;bootstrap&lt;/artifactId&gt;
+    &lt;version&gt;5.3.3&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+                <p class="p2">Y luego enlaza Bootstrap desde tu JSP:</p>
+                <pre><code>&lt;link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/5.3.3/css/bootstrap.min.css"&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section section2">
+            <div class="text">
+                <h2>4. Crear un archivo JSP con Bootstrap</h2>
+                <p class="p4">Aquí tienes un ejemplo básico de cómo quedaría tu <code>index.jsp</code>:</p>
+                <pre><code>&lt;%@ page contentType="text/html;charset=UTF-8" %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Mi Proyecto con Bootstrap&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body class="container mt-5"&gt;
+    &lt;h1 class="text-primary"&gt;¡Hola desde JSP con Bootstrap!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section section3">
+            <div class="text">
+                <h2>5. Capturas de ejemplo</h2>
+                <p class="p2">A continuación te mostramos 4 capturas importantes del proceso:</p>
+
+                <div class="mb-4">
+                    <p><strong>Captura 1 - Estructura del proyecto:</strong> Aquí puedes ver cómo debe estar organizado tu proyecto Maven, con carpetas como <code>webapp</code>, <code>WEB-INF</code> e <code>index.jsp</code>.</p>
+                    <img src="../styles/EjemploBootstrap - Estructura de carpetas.png" class="img-fluid border" alt="Estructura del proyecto Maven">
+                </div>
+
+                <div class="mb-4">
+                    <p><strong>Captura 2 - Agregando Bootstrap por CDN:</strong> Esta imagen muestra dónde colocar el enlace CDN dentro del <code>&lt;head&gt;</code> de tu archivo JSP.</p>
+                    <img src="../styles/EjemploBootstrap - link.png" class="img-fluid border" alt="Enlace Bootstrap en head">
+                </div>
+
+                <div class="mb-4">
+                    <p><strong>Captura 3 - Código del archivo .jsp:</strong> Puedes ver cómo se estructura el contenido con Bootstrap dentro del <code>index.jsp</code>.</p>
+                    <img src="../styles/EjemploBootstrap - codigogeneral.png" class="img-fluid border" alt="Código JSP con Bootstrap">
+                </div>
+
+                <div class="mb-4">
+                    <p><strong>Captura 4 - Vista en el navegador:</strong> Aquí se muestra cómo se ve la página ya funcionando con Bootstrap.</p>
+                    <img src="../styles/EjemploBootstrap - vistageneral.png" class="img-fluid border" alt="Vista de la página JSP con Bootstrap">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section3">
+            <div class="text-center my-4">
+                <button type="button" class="btn btn-primary btn-lg">
+                    Boton Bootstrap de ejemplo (No hace nada)
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-3">
+        Proyecto colaborativo - Bimestre 3
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guia de uso y Aplicacion : Backend </title>
+    <link rel="stylesheet" href="../styles/estiloUno.css" />
+</head>
+
+<body>
+    <div class="fixed-header">Backend</div>
+    <div class="container">
+
+        <div class="sections section1">
+            <div class="text">
+                <h2>Maven - Gestión y Comprensión de Proyectos (Project Management and Comprehension)</h2>
+                <p>
+                    Maven es una herramienta de gestión y construcción de proyectos en Java que automatiza tareas como
+                    la compilación, empaquetado, ejecución de pruebas y despliegue de aplicaciones. Utiliza un archivo
+                    de configuración llamado <code>pom.xml</code> donde se definen las dependencias, plugins y
+                    configuraciones necesarias para el proyecto. Gracias a Maven, los desarrolladores pueden mantener un
+                    flujo de trabajo más ordenado y consistente, ya que gestiona de forma automática la descarga de
+                    librerías y asegura que todos trabajen con las mismas versiones y configuraciones, facilitando así
+                    el mantenimiento y la escalabilidad de la aplicación.
+                </p>
+
+                <p class="p2">
+                    A continuación se muestran los pasos para crear un proyecto <strong>Java Web con Maven</strong>
+                    utilizando <strong>NetBeans</strong>, incluyendo la configuración del servidor y detalles
+                    importantes para compatibilidad:
+                    <br><br>
+                    1. Abre <strong>NetBeans</strong> y selecciona la opción <em>"Nuevo Proyecto"</em> desde el menú o
+                    la pantalla principal.<br><br>
+
+                    2. En el asistente, selecciona la categoría <strong>Java con Maven</strong> y luego <strong>Web
+                        Application</strong>. Haz clic en <em>Next</em>.<br><br>
+
+                    3. Especifica los datos del proyecto:
+                <ul>
+                    <li><strong>Group ID:</strong> Identificador del grupo, por ejemplo: <code>com.ejemplo</code>.</li>
+                    <li><strong>Artifact ID:</strong> Nombre corto del proyecto, como: <code>MiWebApp</code>.</li>
+                    <li><strong>Version:</strong> Por ejemplo: <code>1.0-SNAPSHOT</code>.</li>
+                </ul>
+
+                4. En la siguiente ventana, selecciona el <strong>servidor</strong> (como GlassFish o Tomcat) y la
+                versión de <strong>Java EE Web</strong> (por ejemplo: <code>Java EE Web 8</code>).<br><br>
+
+                5. Asigna el nombre final y la ubicación del proyecto, luego haz clic en <em>Finish</em>.<br><br>
+
+                6. NetBeans generará la estructura base junto con el archivo <code>pom.xml</code>, el cual contiene las
+                dependencias y configuración inicial.<br><br>
+
+                7. Puedes editar el archivo <code>pom.xml</code> para agregar dependencias necesarias dentro del bloque
+                <code>&lt;dependencies&gt;</code> y complementos dentro de <code>&lt;build&gt;</code>.<br><br>
+
+                8. Para compilar el proyecto: haz clic derecho sobre el proyecto y elige <strong>"Compile"</strong> o
+                usa <strong>"Run > Clean and Build Project"</strong>.<br><br>
+
+                9. Asegúrate de estar usando <strong>JDK 1.8</strong> para garantizar compatibilidad con bibliotecas
+                tradicionales de Java EE.<br><br>
+
+                10. Finalmente, puedes usar <code>mvn clean install</code> desde la terminal para compilar, instalar y
+                generar artefactos del proyecto, listos para su despliegue.
+                </p>
+            </div>
+            <div class="imagenes-maven">
+                <img src="../images/Maven1.png" alt="Imagen Maven 1" />
+                <img src="../images/Maven3.png" alt="Imagen Maven 3" />
+                <img src="../images/Maven2.png" alt="Imagen Maven 2" />
+                <img src="../images/Maven4.png" alt="Imagen Maven 2" />
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mi Página Responsiva. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

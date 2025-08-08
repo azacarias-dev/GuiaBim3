@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia para JDNI/JDBC</title>
+    <link rel="stylesheet" href="../styles/jdni.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h3>Guía para JNDI y JDBC</h3>
+    </header>
+
+    <div class="jdni">
+    <h1>¿Qué significa JDNI?</h1>
+        <div class="imagen-contenedor">
+        <p>JNDI, que significa Java Naming and Directory Interface, es una herramienta de 
+            programación en Java que permite a las aplicaciones conectarse a servicios de 
+            nombres y directorios. Imagina que es como una agenda de contactos universal 
+            para tus programas. En lugar de que tu aplicación tenga que saber la dirección 
+            o ubicación exacta de un recurso (como una base de datos o un servidor de correo), 
+            JNDI te permite buscarlo por un nombre más simple y comprensible.</p>
+        <img src="../images/jdni.png" alt="Esquema JNDI" title="Ilustración de cómo JNDI.">
+        </div>
+    </div>
+
+    <div class="jdbc">
+        <h1>¿Qué significa JDBC?</h1>
+        <div class="imagen-contenedorj">
+        <p>JDBC (Java Database Connectivity) es la API estándar de Java que permite a las 
+            aplicaciones conectarse y comunicarse con bases de datos relacionales, como MySQL, 
+            Oracle, y SQL Server. Actúa como un puente entre tu programa Java y la base de datos, 
+            proporcionando un conjunto de clases e interfaces que facilitan la ejecución de sentencias 
+            SQL. Esto incluye tareas esenciales como establecer una conexión, enviar consultas (SELECT, 
+            INSERT, UPDATE), y procesar los resultados que devuelve la base de datos.</p>
+        <img src="../images/jdbc.jpg" alt="Esquema JDBC" title="Ilustración de cómo JDBC.">
+        </div>
+    </div>
+
+    <div class="jdni">
+        <h1 style="text-align: center;">Cómo Funcionan</h1>
+    </div>
+
+    <div class="comofunciona">
+        <h2>¿Cómo funciona JDNI?</h2>
+        <p>Funciona como Interface, es como un directorio telefónico para tus 
+            aplicaciones Java. En lugar de que tu programa tenga que saber la dirección exacta de 
+            un recurso (como una base de datos), JNDI le permite buscarlo por un nombre más simple 
+            y amigable, por ejemplo, "MiBaseDeDatosPrincipal". JNDI se encarga de encontrar la ubicación 
+            real de ese recurso y conectar tu aplicación a él. Esto hace que tu código sea más flexible, 
+            ya que si la ubicación del recurso cambia, solo tienes que actualizar la configuración de JNDI, 
+            no el código de tu programa.</p>
+    </div>
+
+    <div class="comofunciona">
+        <h2>¿Cómo funciona JDBC?</h2>
+        <p>JDBC (Java Database Connectivity) es una API de Java que permite a las aplicaciones conectarse 
+            y comunicarse con bases de datos relacionales. Funciona como un intermediario o "puente" entre 
+            tu código Java y la base de datos. Tu aplicación utiliza los métodos y clases de JDBC para enviar 
+            sentencias SQL (como SELECT o UPDATE) de forma estandarizada. A su vez, un controlador JDBC específico 
+            para cada base de datos (por ejemplo, para MySQL o PostgreSQL) se encarga de traducir esas llamadas de 
+            la API en el lenguaje que la base de datos entiende, ejecutar la acción y devolver los resultados a tu programa.</p>
+    </div>
+
+    <div class="jdni">
+        <h1 style="text-align: center;">Pasos Para implementarlo</h1>
+    </div>
+
+    <div class="comofunciona">
+        <h2>1. Configuración en el Servidor</h2>
+        <div class="imagen-pasos"></div>
+        <p>El primer paso para usar JNDI y JDBC en una aplicación web es configurar una fuente de datos (DataSource) directamente 
+            en el servidor de aplicaciones, como Tomcat o WildFly. Esta configuración le dice al servidor cómo conectarse a la base 
+            de datos (con su URL, usuario y contraseña). El servidor le asigna un nombre a esta configuración, como jdbc/MiBaseDeDatos, 
+            para que tu aplicación la pueda encontrar. De esta manera, los detalles de la base de datos no están en el código de tu aplicación.</p>
+        <img src="../images/Captura 3.png" alt="Esquema JNDI" title="Paso 1" width="400px">
+    </div>
+
+    <div class="comofunciona">
+        <h2>2. Uso de JNDI en tu aplicación</h2>
+        <div class="imagen-pasos"></div>
+        <p>Tu aplicación web usa la interfaz JNDI para buscar esa fuente de datos por el nombre que le asignaste en el servidor. Imagina que tu aplicación 
+            le pregunta a JNDI: "¿Dónde está jdbc/MiBaseDeDatos?". JNDI se encarga de buscar esa configuración y le entrega a tu aplicación un objeto DataSource 
+            listo para usarse.</p>
+        <img src="../images/Captura 1.png" alt="Esquema JNDI" title="Paso 2" width="400px">
+    </div>
+
+    <div class="comofunciona">
+        <h2>3. Conexión con JDBC</h2>
+        <div class="imagen-pasos"></div>
+        <p>Con el objeto DataSource que obtuviste de JNDI, tu aplicación puede pedirle una conexión activa a la base de datos. Esta es la parte de JDBC. 
+            Tu aplicación usa esta conexión para ejecutar consultas SQL (como SELECT o INSERT). Una vez que la aplicación ha terminado de trabajar con la 
+            base de datos, le pide al servidor que cierre la conexión para liberar recursos.</p>
+        <img src="../images/Captura 2.png" alt="Esquema JNDI" title="Paso 2" width="400px">
+    </div>
+    </div>
+
+    <footer class="main-footer">
+        <p style="text-align: center;">&copy; 2021304 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

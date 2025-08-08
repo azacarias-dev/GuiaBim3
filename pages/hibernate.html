@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía sobre Hibernate</title>
+    <link rel="stylesheet" href="../styles/hibernate.css">
+</head>
+<body class="body-style">
+
+    <header class="main-header">
+        <div class="header-container">
+            <h1>Guía de Hibernate</h1>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <section class="info-section">
+            <h2 class="section-title">¿Qué es Hibernate?</h2>
+            <div class="content-wrapper">
+                <p class="section-text">
+                    Hibernate es un <strong class="strong-text">framework de mapeo objeto-relacional (ORM)</strong> para Java. Su función principal es simplificar la interacción con bases de datos relacionales, traduciendo objetos de Java a tablas de base de datos y viceversa. Con Hibernate, puedes trabajar con tus datos usando objetos de Java en lugar de escribir sentencias SQL directamente, lo que hace el código más limpio, más seguro y más fácil de mantener.
+                </p>
+                <div class="image-container">
+                    <img src="../images/hibernate.jpg" alt="Ilustración de cómo funciona un ORM" class="section-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2 class="section-title">¿Cómo funciona Hibernate?</h2>
+            <p class="section-text">
+                Hibernate utiliza un archivo de configuración (normalmente en XML o a través de anotaciones en Java) para mapear las clases de Java a las tablas de la base de datos. Este mapeo define cómo cada propiedad de un objeto se corresponde con una columna en una tabla. Cuando tu aplicación necesita guardar un objeto, Hibernate se encarga de generar la sentencia SQL (como `INSERT` o `UPDATE`) necesaria. Del mismo modo, cuando necesitas recuperar datos, Hibernate ejecuta un `SELECT` y crea un objeto de Java con los resultados.
+            </p>
+        </section>
+
+        <section class="info-section">
+            <h2 class="section-title">Ventajas de usar Hibernate</h2>
+            <ul class="section-list">
+                <li class="list-item"><strong>Productividad:</strong> Reduce significativamente la cantidad de código que tienes que escribir para manejar bases de datos.</li>
+                <li class="list-item"><strong>Portabilidad:</strong> Permite que tu aplicación funcione con diferentes bases de datos (MySQL, PostgreSQL, Oracle) sin cambiar el código Java, ya que solo necesitas ajustar el archivo de configuración.</li>
+                <li class="list-item"><strong>Cacheo:</strong> Incluye un sistema de caché integrado que mejora el rendimiento al reducir el número de accesos a la base de datos.</li>
+                <li class="list-item"><strong>Seguridad:</strong> Ayuda a prevenir ataques de inyección SQL, ya que gestiona las consultas de forma segura.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2 class="section-title">Ejemplo de una clase de entidad</h2>
+            <p class="section-text">
+                A continuación, se muestra un ejemplo de una clase simple de Java que Hibernate puede mapear a una tabla de base de datos. Las anotaciones (como `@Entity` y `@Id`) le dicen a Hibernate cómo tratar la clase y sus propiedades.
+            </p>
+            <div class="code-example">
+                <pre><code>
+@Entity
+@Table(name = "productos")
+public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "nombre")
+    private String nombre;
+
+    @Column(name = "precio")
+    private double precio;
+
+    // Getters y Setters
+    // ...
+}
+                </code></pre>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2021304 Guía de Hibernate. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

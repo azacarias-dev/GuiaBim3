@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología JSP</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Tecnología JSP (JavaServer Pages)</h1>
+    </header>
+
+    <main>
+        <section class="introduccion">
+            <h2>¿Qué es JSP?</h2>
+            <p>
+                JSP (JavaServer Pages) es una tecnología de Java que permite crear páginas web dinámicas. 
+                Combina HTML con código Java embebido, lo que permite generar contenido dinámico en el lado del servidor 
+                antes de enviarlo al navegador.
+            </p>
+        </section>
+
+        <section class="implementacion">
+            <h2>¿Cómo se implementa JSP?</h2>
+            <ol>
+                <li><strong>Instalar un servidor compatible</strong> como Apache Tomcat.</li>
+                <li><strong>Configurar un proyecto web</strong> en un IDE como Eclipse o NetBeans.</li>
+                <li>Crear archivos con extensión <code>.jsp</code>.</li>
+                <li>Escribir el HTML y el código Java necesario dentro del archivo.</li>
+                <li>Ejecutar el proyecto en el servidor y acceder a la página desde el navegador.</li>
+            </ol>
+        </section>
+
+        <section class="ventajas">
+            <h2>Ventajas de JSP</h2>
+            <ul>
+                <li>Separación entre la lógica de negocio y la presentación.</li>
+                <li>Integración sencilla con JavaBeans y Servlets.</li>
+                <li>Facilita la creación de contenido dinámico.</li>
+            </ul>
+        </section>
+
+        <section class="ejemplo">
+            <h2>Ejemplo básico de JSP</h2>
+<pre>
+<code>
+&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hola, Mundo desde JSP!&lt;/h1&gt;
+    &lt;p&gt;Fecha y hora: &lt;%= new java.util.Date() %&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 - Daniel Muralles</p>
+    </footer>
+</body>
+</html>

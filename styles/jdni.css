@@ -1,0 +1,142 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 30px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilos para el encabezado */
+.main-header {
+    background-color: #333; /* Fondo azul */
+    color : #fff; /* Color de texto blanco */
+    padding: 20px;
+    text-align: center; /* Texto centrado */
+    
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Contenedor principal de la página */
+.contenedor {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los títulos principales */
+h1 {
+    color: #0056b3;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los subtítulos */
+h2 {
+    color: #007bff;
+    margin-top: 30px;
+}
+
+/* Estilos para los subtítulos */
+h3 {
+    color: #ffffff;
+    font-size: 32px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+}
+
+/* Estilos para los párrafos */
+p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los contenedores de las secciones */
+.comofunciona {
+    background-color: #e9f5ff;
+    padding: 20px;
+    border-left: 5px solid #007bff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Estilos para el contenedor de la imagen y el texto */
+.imagen-contenedor {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.imagen-contenedor p {
+    flex: 1; /* Permite que el párrafo ocupe el espacio restante */
+    margin-right: 50px;
+}
+
+.imagen-contenedor img {
+    width: 400px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-contenedorj {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.imagen-contenedorj p {
+    flex: 1; /* Permite que el párrafo ocupe el espacio restante */
+    margin-right: 50px;
+}
+
+.imagen-contenedorj img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Nueva clase para las imágenes en la sección de pasos */
+.imagen-pasos {
+    display: flex; /* Alinea los elementos en línea */
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.imagen-pasos p {
+    flex: 1; /* Permite que el párrafo ocupe el espacio restante */
+    margin-right: 20px;
+}
+
+.imagen-pasos img {
+    max-width: 10%; /* Ajusta el tamaño de la imagen a un 40% del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el pie de página */
+.main-footer {
+    background-color: #333; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+    text-align: center; /* Centra el texto del pie de página */
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.main-footer p {
+    margin: 0;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JPA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styles/jpa.css" />
+    <link rel="shortcut icon" href="../images/jpaLogo.svg" type="image/jpa-icon">
+</head>
+
+<body>
+    <div id="box-1">
+        <h1>JPA</h1>
+        <p class="parrafos">
+            La persistencia de datos es un medio mediante el cual una aplicación
+            puede recuperar información desde un sistema de almacenamiento y hacer
+            que esta persista. Java™ Persistence API (JPA) proporciona un mecanismo
+            para gestionar la persistencia y la correlación relacional de objetos y
+            las funciones desde las especificaciones EJB 3.0 .
+        </p>
+        <strong>Requisitos previos:</strong>
+        <ol>
+            <li>Java 8 o superior</li>
+            <li>Maven (para poder manejar las dependencias)</li>
+            <li>Un servidor de aplicaciones (GlassFish, Payara, WildFly, Tomcat con Hibernate/EclipseLink, etc.)</li>
+            <li>Base de datos (MySQL, PostgreSQL, etc.)</li>
+        </ol>
+        <p>
+            <strong>¿Cómo implementar JPA?</strong>
+            <br>
+            Para implementar JPA, se deben seguir los siguientes pasos:
+        </p>
+        <ol>
+            <li>
+                Primer paso tener configurado <code><a href="pom.html">pom.xml</a></code>.
+                <small>(En este archivo se deben agregar las dependencias de JPA y el conector de la base de datos. Haz click para mas detalles</small>
+            </li>
+            <li>
+                Configurar el archivo <code><a href="persistence.html">persistence.xml</a></code>.
+                <small>(Este archivo contiene la configuración de la unidad de persistencia). Haz click para mas detalles</small>
+            </li>
+            <li>Crear las entidades JPA.</li>
+            <br>
+            <p>
+                Para esto se necesita crear clases de entidad. Estas son clases POJO (Plain Old Java Object) que
+                representan las tablas de tu base de datos. Deben estar anotadas con <code>@Entity</code> y tener una
+                clave primaria anotada con <code>@Id</code>.
+            </p>
+            <div class="contenedor-imagenes">
+                <div id="imagen-jpa1" class="img-fluid">
+                    <img id="imagen-ejemplo-pojo" class="img-fluid" src="../images/ejemploPojoUsuarios.png"
+                        alt="ejemploPojoUsuarios">
+                </div>
+                <div id="imagen-jpa2" class="img-fluid">
+                    <img id="imagen-ejemplo-pojo2" class="img-fluid" src="../images/ejemploPojoUsuarios2.png"
+                        alt="ejemploPojoUsuarios2">
+                </div>
+            </div>
+            <li>Utilizar el EntityManager para gestionar las entidades.</li>
+            <br>
+            <p>
+                El <code>EntityManager</code> es la API principal de JPA para interactuar con la base de datos. Permite
+                realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre las entidades.
+                <br>
+                El <code>EntityManagerFactory</code> es el objeto que crea y gestiona las instancias de
+                <code>EntityManager</code>.
+                Por lo que generalmente se instancia una sola vez.
+                <br>
+                Para ello se crea una clase de utilidad que gestione la creación del <code>EntityManagerFactory</code>. Llamada <code><a href="dao.html">DAO</a></code> (Data Access Object).
+            </p>
+            <li>Buenas Practicas.</li>
+            <ol>
+                <li>Cerrar siempre el <code>EntityManager</code> después de usarlo.</li>
+                <li>Manejar transacciones de manera adecuada con <code>begin()</code> y <code>commit()</code> o <code>rollback()</code>.</li>
+            </ol>
+        </ol>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía HTML</title>
+    <link rel="stylesheet" href="../styles/html.css">
+</head>
+
+<body>
+    <header>
+        Guía para implementar HTML en tu proyecto
+    </header>
+
+    <main class="container">
+
+        <section class="section section1">
+            <div class="text">
+                <h2>¿Qué es HTML?</h2>
+                <p class="p2">
+                    HTML (HyperText Markup Language) es el lenguaje estándar para estructurar y presentar contenido en
+                    la web.
+                    Nos permite organizar textos, imágenes, enlaces, tablas, formularios y otros elementos para que los
+                    navegadores puedan mostrarlos correctamente.
+                </p>
+                <p class="p2">
+                    En esta guía crearas y aprenderás los conceptos mas basicos y comunes ademas cómo organizar tu código HTML en un proyecto.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section2">
+            <div class="text">
+                <h2>1. Estructura básica de un documento HTML</h2>
+                <h3>En este ejercicio y en los siguientes tendras que crear archivos .html para poder visualizarlos</h3>
+                <p class="p3">
+                    Un archivo HTML típico tiene la siguiente estructura:
+                </p>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;
+    &lt;p&gt;Este es mi primer documento HTML.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section section3">
+            <div class="text">
+                <h2>2. Etiquetas HTML más comunes</h2>
+                <p class="p2">
+                    Algunas de las etiquetas más utilizadas en HTML son:
+                </p>
+                <ul>
+                    <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> a <code>&lt;h6&gt;...&lt;/h6&gt;</code> - Encabezados</li>
+                    <li><code>&lt;p&gt;...&lt;/p&gt;</code> - Párrafos</li>
+                    <li><code>&lt;a href="..."&gt;...&lt;/a&gt;</code> - Enlaces</li>
+                    <li><code>&lt;img src="..." alt="..."&gt;</code> - Imágenes</li>
+                    <li><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code> y <code>&lt;li&gt;</code> - Listas</li>
+                </ul>
+                <pre><code>&lt;h2&gt;Lista de compras&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Pan&lt;/li&gt;
+    &lt;li&gt;Leche&lt;/li&gt;
+    &lt;li&gt;Huevos&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section section1">
+            <div class="text">
+                <h2>3. Insertar imágenes</h2>
+                <p class="p2">
+                    Para mostrar imágenes en HTML, usamos la etiqueta <code>&lt;img&gt;</code>:
+                </p>
+                <pre><code>&lt;img src="imagenes/foto.jpg" alt="Descripción de la imagen"&gt;</code></pre>
+                <p class="p2">
+                    El atributo <code>alt</code> es importante para la accesibilidad y en caso de que la imagen no
+                    cargue.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section2">
+            <div class="text">
+                <h2>4. Tablas y formularios</h2>
+                <p class="p3">
+                    HTML permite crear tablas y formularios para mostrar datos o recoger información:
+                </p>
+                <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Nombre&lt;/th&gt;
+        &lt;th&gt;Edad&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Ana&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                </code></pre>
+
+                <pre><code>&lt;form action="procesar.php" method="post"&gt;
+    &lt;label&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" name="nombre"&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section section3">
+            <div class="text">
+                <h2>5. Capturas de ejemplo</h2>
+                <p class="p2">Aquí el proceso:</p>
+
+                <div style="text-align: center" class="mb-4">
+                    <p><strong>Captura 1 - Estructura básica HTML:</strong> Documento con etiquetas <code>head</code> y
+                        <code>body</code>.</p>
+                    <img src="../images/html_basico_codigo.png" class="img-fluid border" alt="Estructura HTML" width="1000">
+                    <img src="../images/html_basico_vista.png" class="img-fluid border" alt="Estructura HTML" width="1000">
+                </div>
+
+                <div style="text-align: center" class="mb-4">
+                    <p><strong>Captura 2 - Código de listas:</strong> Ejemplo de lista no ordenada en HTML.</p>
+                    <img src="../images/html_lista_codigo.png" class="img-fluid border" alt="Estructura HTML" width="1000">
+                    <img src="../images/html_lista_vista.png" class="img-fluid border" alt="Estructura HTML" width="1000">
+                </div>
+
+                <div style="text-align: center" class="mb-4">
+                    <p><strong>Captura 3 - Imagen insertada:</strong> Ejemplo usando <code>img</code>.</p>
+                    <img src="../images/html_img_codigo.png" class="img-fluid border" alt="Estructura HTML" width="1000">
+                    <img src="../images/html_img_vista.png" class="img-fluid border" alt="Estructura HTML" width="1000">
+                </div>
+
+                <div style="text-align: center" class="mb-4">
+                    <p><strong>Captura 4 - Tabla HTML:</strong> Ejemplo básico de tabla.</p>
+                    <img src="../images/html_tabla_codigo.png" class="img-fluid border" alt="Estructura HTML" width="1000">
+                    <img src="../images/html_tabla_vista.png" class="img-fluid border" alt="Estructura HTML" width="1000">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-3">
+        Proyecto colaborativo - Bimestre 3
+    </footer>
+</body>
+
+</html>

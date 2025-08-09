@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guia de uso y Aplicacion : Backend </title>
+    <link rel="stylesheet" href="../styles/estiloUno.css" />
+</head>
+
+<body>
+    <div class="fixed-header">Backend</div>
+
+    <div class="container">
+
+        <div class="sections section1">
+            <div class="text">
+                <h2>DAO - Data Access Object</h2>
+                <p>
+                    El DAO encapsula todas las operaciones necesarias para crear, leer, actualizar o eliminar registros
+                    (CRUD) sin que el resto de la aplicación tenga que preocuparse por los detalles técnicos de SQL,
+                    conexiones o sentencias. Esto hace que el código sea más ordenado, fácil de mantener y reutilizable,
+                    ya que si cambia la base de datos o la forma en que se accede a ella, solo se modifica el DAO y no
+                    toda la aplicación.
+                </p>
+
+                <p class="p5">
+                    El patrón <strong>DAO (Data Access Object)</strong> es fundamental para separar la lógica de acceso
+                    a datos de la lógica de negocio en una aplicación. Esto facilita la mantenibilidad, reutilización y
+                    pruebas del código.<br><br>
+                    Para crear y revisar correctamente un DAO en <strong>NetBeans 21</strong>, sigue estos
+                    pasos:<br><br>
+                    1. Crea o abre un proyecto Java Maven en NetBeans 21.<br>
+                    2. Dentro del proyecto, crea una interfaz DAO que defina los métodos para acceso a datos (como
+                    crear, leer, actualizar y eliminar).<br>
+                    3. Implementa la interfaz DAO en una clase concreta donde se gestione la conexión a la base de
+                    datos.<br>
+                    4. Asegúrate que las dependencias necesarias para acceder a la base de datos estén declaradas en el
+                    <code>pom.xml</code>.<br>
+                    5. Usa NetBeans para detectar errores en tu código DAO y realiza las correcciones necesarias.<br>
+                    6. Refresca y limpia el proyecto para aplicar cambios y compilar sin errores.<br>
+                    7. Prueba el DAO integrándolo con la lógica de negocio o mediante pruebas unitarias.<br>
+                    8. Finalmente, verifica que las operaciones de acceso a datos funcionan correctamente y sin
+                    excepciones.
+                </p>
+            </div>
+            <img src="../images/DAO.png" alt="Imagen 1" />
+
+        </div>
+
+        <footer>
+            <p>&copy; Guia de uso y aplicacion de tecnología usadas en la unidad</p>
+        </footer>
+</body>
+
+</html>

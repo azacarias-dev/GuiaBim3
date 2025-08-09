@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guía rápida: JSF (JavaServer Faces) — Ejemplos</title>
+  <link rel="stylesheet" href="/styles/jsf.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>JSF (JavaServer Faces) — Explicación y ejemplos</h1>
+    <p class="lead">Página guía con conceptos clave, ciclo de vida y ejemplos mínimos (XHTML + Managed Bean + web.xml).</p>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>¿Qué es JSF?</h2>
+      <p>
+        JSF (JavaServer Faces) es un framework de Java EE para construir interfaces web con un enfoque <strong>basado en componentes</strong>.
+        Usa <em>Facelets</em> (páginas XHTML) como vista y <strong>managed beans</strong> (clases Java) como controladores.
+      </p>
+    </section>
+
+    <section>
+      <h2>Conceptos clave</h2>
+      <ul>
+        <li><strong>Componentes</strong>: etiquetas prefijadas (p.ej. <code>&lt;h:inputText&gt;</code>, <code>&lt;h:commandButton&gt;</code>).</li>
+        <li><strong>Facelets</strong>: motor de vistas que utiliza archivos <code>.xhtml</code>.</li>
+        <li><strong>Managed beans / CDI</strong>: clases Java que contienen la lógica, accesibles desde la vista con EL: <code>#{bean.prop}</code>.</li>
+        <li><strong>Ciclo de vida</strong>: restore view → apply request values → process validations → update model values → invoke application → render response.</li>
+        <li><strong>Validadores y convertidores</strong>: <code>required="true"</code>, <code>&lt;f:convertDateTime&gt;</code>, validaciones personalizadas.</li>
+        <li><strong>Navegación</strong>: retornar cadenas desde métodos de acción o usar reglas en <code>faces-config.xml</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Estructura típica del proyecto</h2>
+      <pre class="note">
+my-app/
+  src/main/java/... (paquetes con Managed Beans)
+  src/main/webapp/ (páginas .xhtml, recursos)
+  src/main/webapp/WEB-INF/web.xml
+  pom.xml (si usas Maven)
+      </pre>
+      <p>Si despliegas en <em>GlassFish/Payara/WildFly</em>, JSF normalmente está incluido. En <em>Tomcat</em> debes añadir la implementación (Mojarra o MyFaces).</p>
+    </section>
+
+    <section>
+      <h2>Ejemplo mínimo (formulario de saludo)</h2>
+      <p>Este ejemplo muestra una página JSF (.xhtml) y su <em>managed bean</em> en Java. En el HTML de abajo verás los fragmentos listos para copiar.</p>
+
+      <h3>Archivo: <code>greeting.xhtml</code> (JSF / Facelets)</h3>
+      <div class="code-block">
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"&gt;
+  &lt;h:head&gt;
+    &lt;title&gt;JSF - Ejemplo Saludo&lt;/title&gt;
+  &lt;/h:head&gt;
+  &lt;h:body&gt;
+    &lt;h:form&gt;
+      &lt;h:outputLabel for="name" value="Nombre:" /&gt;
+      &lt;h:inputText id="name" value="#{greetingBean.name}" required="true" /&gt;
+      &lt;h:message for="name" /&gt;
+      &lt;h:commandButton value="Saludar" action="#{greetingBean.sayHello}" /&gt;
+    &lt;/h:form&gt;
+
+    &lt;h:panelGroup rendered="#{not empty greetingBean.message}"&gt;
+      &lt;h:outputText value="#{greetingBean.message}" /&gt;
+    &lt;/h:panelGroup&gt;
+  &lt;/h:body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+
+      <h3>Archivo: <code>GreetingBean.java</code> (Managed Bean clásico)</h3>
+      <div class="code-block">
+<pre><code>// paquete: com.example.jsf
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean(name = "greetingBean")
+@RequestScoped
+public class GreetingBean {
+    private String name;
+    private String message;
+
+    public String sayHello() {
+        message = "¡Hola, " + (name == null || name.isEmpty() ? "mundo" : name) + "!";
+        return null; // null = quedarse en la misma página
+    }
+
+    // getters y setters
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getMessage() { return message; }
+}
+</code></pre>
+      </div>
+
+      <p><em>Alternativa moderna (CDI):</em></p>
+      <div class="code-block small">
+<pre><code>import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
+
+@Named("greetingBean")
+@RequestScoped
+public class GreetingBean { ... }
+</code></pre>
+      </div>
+
+      <h3>Archivo: <code>web.xml</code> (mapeo básico de FacesServlet)</h3>
+      <div class="code-block">
+<pre><code>&lt;web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+             http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"&gt;
+
+  &lt;servlet&gt;
+    &lt;servlet-name&gt;Faces Servlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;javax.faces.webapp.FacesServlet&lt;/servlet-class&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+  &lt;/servlet&gt;
+
+  &lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;Faces Servlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;*.xhtml&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+
+&lt;/web-app&gt;
+</code></pre>
+      </div>
+
+      <h4>Cómo funciona (resumen)</h4>
+      <ol>
+        <li>El navegador solicita <code>greeting.xhtml</code>.</li>
+        <li>FacesServlet procesa la petición y renderiza la vista.</li>
+        <li>Al hacer submit, JSF pasa por sus fases (validación, update model, invoke).</li>
+        <li>El método <code>sayHello()</code> se ejecuta y actualiza <code>message</code>.</li>
+        <li>La página se vuelve a renderizar mostrando el mensaje.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Validación y conversión</h2>
+      <p>JSF trae validadores y convertidores integrados (<code>&lt;f:validateLength&gt;</code>, <code>&lt;f:convertDateTime&gt;</code>, etc.) y permite crear validadores personalizados.</p>
+      <p>Ejemplo pequeña validación: <code>&lt;h:inputText required="true" /&gt;</code></p>
+    </section>
+
+    <section>
+      <h2>Despliegue rápido</h2>
+      <ol>
+        <li>Crea un proyecto web (Maven o IDE como Eclipse/NetBeans).</li>
+        <li>Coloca tus <code>.xhtml</code> en <code>src/main/webapp</code> y beans en <code>src/main/java</code>.</li>
+        <li>Si el servidor no incluye JSF, añade la implementación (Mojarra o MyFaces) en <code>pom.xml</code>.</li>
+        <li>Empaqueta (mvn package) y despliega el WAR en tu servidor (p.ej. Tomcat/Payara).</li>
+        <li>Accede a <code>http://localhost:8080/tuApp/greeting.xhtml</code>.</li>
+      </ol>
+    </section>
+
+    <section class="tips">
+      <h2>Consejos prácticos</h2>
+      <ul>
+        <li>Para proyectos nuevos usa <strong>CDI (@Named)</strong> si el contenedor lo soporta.</li>
+        <li>Usa Facelets (.xhtml) en lugar de JSP (JSF moderno).</li>
+        <li>Para interactividad parcial usa <code>&lt;f:ajax&gt;</code> en botones o inputs.</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>¿Quieres que te genere el proyecto Maven con estructura completa (pom.xml + archivos) listo para abrir en NetBeans/Eclipse? Dime qué servidor usas (Tomcat, Payara, etc.) y te lo preparo.</p>
+    </footer>
+  </main>
+</body>
+</html>

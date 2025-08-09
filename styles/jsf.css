@@ -1,0 +1,44 @@
+/* styles.css - diseño sencillo para la página explicativa */
+:root{
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --accent:#2b7ae4;
+  --muted:#555;
+  --mono: "Fira Code", "Courier New", monospace;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#222;
+  margin:0;
+  line-height:1.5;
+}
+
+.hero{
+  background:linear-gradient(90deg, #eef6ff, #ffffff);
+  padding:32px 16px;
+  border-bottom:1px solid rgba(0,0,0,0.04);
+  text-align:center;
+}
+.hero h1{margin:0 0 6px;font-size:1.8rem;color:var(--accent)}
+.hero .lead{margin:0;color:var(--muted)}
+
+.container{
+  max-width:900px;
+  margin:24px auto;
+  padding:16px;
+}
+
+h2{color:#1d3557;margin-top:18px}
+h3{margin:14px 0 6px;color:#203040}
+p, ul, ol{margin:8px 0 12px}
+
+.code-block{background:var(--card);border:1px solid rgba(0,0,0,0.06);padding:12px;border-radius:8px;overflow:auto;margin-bottom:12px}
+.code-block pre{margin:0;font-family: var(--mono);font-size:0.9rem;white-space:pre;line-height:1.35}
+.code-block.small pre{font-size:0.85rem}
+
+.note{background:#fff7e6;padding:10px;border-left:4px solid #f0c36d;border-radius:6px}
+
+footer.footer{margin-top:22px;padding:12px;color:var(--muted);font-size:0.95rem;border-top:1px dashed rgba(0,0,0,0.04)}
